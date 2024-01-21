@@ -30,7 +30,7 @@ const authController = {
             });
 
             // Send the token and user details in the response
-            res.status(201).json({ message: 'User created successfully', name, userId: newUser._id, token, email });
+            res.status(201).json({ message: 'User created successfully', firstname, userId: newUser._id, token, email });
         } catch (error) {
             // Handle specific Mongoose duplicate email error
             if (error.code === 11000 && error.keyPattern && error.keyPattern.email) {
